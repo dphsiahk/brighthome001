@@ -1,1 +1,675 @@
+/* ==========================================================
+   BRIGHT HOME ELECTRICAL COMPANY
+   PROFESSIONAL ENERGY CORPORATE WEBSITE
+   STYLE.CSS
+   PART 2A
+========================================================== */
 
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --primary:#0A84FF;
+    --secondary:#FFD60A;
+    --dark:#0A192F;
+    --white:#FFFFFF;
+    --light:#F5F7FA;
+    --gray:#6B7280;
+
+    --gradient-primary:linear-gradient(
+        135deg,
+        #0A84FF,
+        #0056D6
+    );
+
+    --gradient-dark:linear-gradient(
+        135deg,
+        #0A192F,
+        #112240
+    );
+
+    --gradient-yellow:linear-gradient(
+        135deg,
+        #FFD60A,
+        #FFC300
+    );
+
+    --shadow-sm:0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-md:0 10px 25px rgba(0,0,0,.15);
+
+    --shadow-lg:0 20px 45px rgba(0,0,0,.25);
+
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:30px;
+
+    --transition:.35s ease;
+
+}
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:#111827;
+    line-height:1.7;
+    overflow-x:hidden;
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    outline:none;
+}
+
+input,
+textarea{
+    outline:none;
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container{
+
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+    padding:0 20px;
+
+}
+
+/* ==========================================================
+   SECTION SPACING
+========================================================== */
+
+section{
+
+    padding:100px 0;
+    position:relative;
+
+}
+
+/* ==========================================================
+   SECTION TITLES
+========================================================== */
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:clamp(2rem,4vw,3.4rem);
+    color:var(--dark);
+    margin-bottom:15px;
+    font-weight:800;
+
+}
+
+.section-title p{
+
+    max-width:850px;
+    margin:auto;
+    color:var(--gray);
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--gradient-primary);
+    color:var(--white);
+
+    box-shadow:
+    0 0 25px rgba(10,132,255,.35);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 30px rgba(10,132,255,.45);
+
+}
+
+.btn-secondary{
+
+    background:transparent;
+    border:2px solid var(--secondary);
+    color:var(--secondary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--secondary);
+    color:#000;
+
+}
+
+/* ==========================================================
+   SCROLL PROGRESS
+========================================================== */
+
+.scroll-progress{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:4px;
+    width:0;
+
+    background:var(--secondary);
+
+    z-index:99999;
+
+}
+
+/* ==========================================================
+   SCROLL TOP BUTTON
+========================================================== */
+
+#scrollTopBtn{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:20px;
+
+    z-index:999;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s;
+
+}
+
+#scrollTopBtn.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:.4s;
+
+    background:rgba(10,25,47,.75);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.header.scrolled{
+
+    background:rgba(10,25,47,.95);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.header .container{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    min-height:90px;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    color:var(--white);
+
+    font-size:1.6rem;
+
+    font-weight:800;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+.logo i{
+
+    color:var(--secondary);
+
+    animation:pulseBolt 2s infinite;
+
+}
+
+@keyframes pulseBolt{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.nav-links{
+
+    display:flex;
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    color:#fff;
+
+    font-weight:500;
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.mobile-toggle{
+
+    display:none;
+
+    color:#fff;
+
+    font-size:1.7rem;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(10,25,47,.88),
+    rgba(10,25,47,.92)),
+    url('../images/hero.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.hero-content{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.hero-text{
+
+    color:#fff;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(
+        2.5rem,
+        6vw,
+        5rem
+    );
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    font-size:1.1rem;
+
+    margin-bottom:35px;
+
+    color:#e5e7eb;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+}
+
+.hero-image{
+
+    position:relative;
+
+}
+
+.hero-image img{
+
+    border-radius:30px;
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.45);
+
+    animation:floatHero 5s ease infinite;
+
+}
+
+@keyframes floatHero{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================================================
+   ELECTRIC GLOW EFFECTS
+========================================================== */
+
+.electric-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+}
+
+.glow1{
+
+    width:300px;
+    height:300px;
+
+    background:#0A84FF;
+
+    top:100px;
+    left:-120px;
+
+    opacity:.35;
+
+}
+
+.glow2{
+
+    width:350px;
+    height:350px;
+
+    background:#FFD60A;
+
+    right:-150px;
+    bottom:50px;
+
+    opacity:.20;
+
+}
+
+/* ==========================================================
+   GLASSMORPHISM CARD
+========================================================== */
+
+.glass-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:991px){
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .mobile-toggle{
+        display:block;
+    }
+
+    .navbar{
+
+        position:fixed;
+
+        top:90px;
+        left:-100%;
+
+        width:100%;
+
+        background:#0A192F;
+
+        transition:.4s;
+
+        padding:30px;
+
+    }
+
+    .navbar.active{
+        left:0;
+    }
+
+    .nav-links{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .hero{
+
+        padding-top:100px;
+    }
+
+    section{
+        padding:80px 0;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
