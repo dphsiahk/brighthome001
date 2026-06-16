@@ -1,1 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Bright Home Electrical Company</title>
+
+<meta name="description" content="Bridging the Gap to Provide Electricity Services and Solutions for All Households in Liberia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+--primary:#fcb900;
+--secondary:#0d1b2a;
+--accent:#1b263b;
+--light:#ffffff;
+--gray:#f5f7fa;
+--dark:#111827;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+line-height:1.7;
+overflow-x:hidden;
+background:#fff;
+}
+
+a{
+text-decoration:none;
+}
+
+section{
+padding:100px 8%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+color:var(--secondary);
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#666;
+max-width:700px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:var(--primary);
+color:#000;
+font-weight:600;
+border-radius:50px;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(13,27,42,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:#fff;
+}
+
+.logo span{
+color:var(--primary);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1600');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-content h1{
+font-size:70px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-content span{
+color:var(--primary);
+}
+
+.hero-content p{
+font-size:22px;
+max-width:900px;
+margin:auto auto 35px;
+}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+gap:50px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:20px;
+}
+
+.about-content h3{
+font-size:35px;
+margin-bottom:20px;
+color:var(--secondary);
+}
+
+/* MISSION */
+
+.mission{
+background:var(--secondary);
+color:white;
+text-align:center;
+}
+
+.mission h2{
+font-size:45px;
+margin-bottom:25px;
+}
+
+.mission p{
+font-size:20px;
+max-width:900px;
+margin:auto;
+}
+
+/* VALUES */
+
+.values-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.value-card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.value-card:hover{
+transform:translateY(-10px);
+}
+
+.value-card i{
+font-size:45px;
+color:var(--primary);
+margin-bottom:20px;
+}
+
+/* SERVICES */
+
+.services{
+background:var(--gray);
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+}
+
+.service-card i{
+font-size:50px;
+color:var(--primary);
+margin-bottom:20px;
+}
+
+.service-card h3{
+margin-bottom:15px;
+}
+
+/* COUNTERS */
+
+.stats{
+background:linear-gradient(135deg,#0d1b2a,#1b263b);
+color:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.counter{
+font-size:55px;
+font-weight:700;
+color:var(--primary);
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.project{
+background:white;
+padding:35px;
+border-left:6px solid var(--primary);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+border-radius:15px;
+}
+
+/* TEAM */
+
+.team{
+background:var(--gray);
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.member{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.member i{
+font-size:65px;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact{
+background:var(--secondary);
+color:white;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.contact-box{
+background:rgba(255,255,255,.08);
+padding:35px;
+border-radius:20px;
+}
+
+.contact-box i{
+font-size:35px;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+footer{
+background:#08111d;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.nav-links{
+display:none;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Bright<span>Home</span></div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Bright Home <span>Electrical Company</span></h1>
+
+<p>
+Bridging the Gap to Provide Electricity Services and Solutions
+for All Households in Liberia.
+</p>
+
+<a href="#contact" class="btn">
+Get A Free Consultation
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About Us</h2>
+<p>Reliable Electrical Solutions For Homes, Businesses and Industries.</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-content">
+
+<h3>Powering Liberia With Excellence</h3>
+
+<p>
+Bright Home Electrical Company is a full-service residential and commercial
+electrical solutions provider dedicated to delivering reliable, safe,
+and innovative electrical services.
+</p>
+
+<br>
+
+<p>
+We specialize in electrical installations, maintenance, repairs,
+energy solutions, smart home automation, renewable energy systems,
+generator installations, surveillance systems and project management.
+</p>
+
+</div>
+
+<div class="about-image">
+
+<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MISSION -->
+
+<section class="mission">
+
+<h2>Our Mission</h2>
+
+<p>
+To brighten every home and business through safe, reliable,
+and innovative electrical solutions that improve comfort,
+security and sustainability.
+</p>
+
+</section>
+
+<!-- VALUES -->
+
+<section>
+
+<div class="section-title">
+<h2>Core Values</h2>
+</div>
+
+<div class="values-grid">
+
+<div class="value-card">
+<i class="fas fa-shield-alt"></i>
+<h3>Safety First</h3>
+<p>Strict adherence to international and national safety standards.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-users"></i>
+<h3>Customer Commitment</h3>
+<p>Building trust and satisfaction with every project.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-lightbulb"></i>
+<h3>Innovation</h3>
+<p>Modern electrical and smart home technologies.</p>
+</div>
+
+<div class="value-card">
+<i class="fas fa-leaf"></i>
+<h3>Sustainability</h3>
+<p>Energy-efficient and eco-friendly solutions.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="services">
+
+<div class="section-title">
+<h2>Our Services</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<i class="fas fa-home"></i>
+<h3>Residential Services</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-building"></i>
+<h3>Commercial Services</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-wifi"></i>
+<h3>Smart Home Automation</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-tools"></i>
+<h3>Maintenance & Repairs</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-solar-panel"></i>
+<h3>Solar & Renewable Energy</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-industry"></i>
+<h3>Industrial Services</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-video"></i>
+<h3>Security & Surveillance</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-bolt"></i>
+<h3>Generator Solutions</h3>
+</div>
+
+<div class="service-card">
+<i class="fas fa-clipboard-list"></i>
+<h3>Project Management</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div>
+<div class="counter" data-target="500">0</div>
+<h3>Projects Completed</h3>
+</div>
+
+<div>
+<div class="counter" data-target="50">0</div>
+<h3>Professional Staff</h3>
+</div>
+
+<div>
+<div class="counter" data-target="24">0</div>
+<h3>Hour Emergency Service</h3>
+</div>
+
+<div>
+<div class="counter" data-target="100">0</div>
+<h3>% Client Satisfaction</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-title">
+<h2>Recent Projects</h2>
+</div>
+
+<div class="projects-grid">
+
+<div class="project">
+<h3>Transformer Installation</h3>
+<p>Rehab Community under PECO</p>
+</div>
+
+<div class="project">
+<h3>Solar Installation</h3>
+<p>Broadville Community</p>
+</div>
+
+<div class="project">
+<h3>Meter Installation</h3>
+<p>Johnsonville</p>
+</div>
+
+<div class="project">
+<h3>Street Light Installation</h3>
+<p>Johnsonville Kpelleh Town</p>
+</div>
+
+<div class="project">
+<h3>Slash Connection Works</h3>
+<p>Kakata & Wein Town</p>
+</div>
+
+<div class="project">
+<h3>Heavy Duty Installations</h3>
+<p>Industrial Electrical Projects</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team" class="team">
+
+<div class="section-title">
+<h2>Leadership Team</h2>
+</div>
+
+<div class="team-grid">
+
+<div class="member">
+<i class="fas fa-user-circle"></i>
+<h3>Oliver Kwanue</h3>
+<p>CEO</p>
+</div>
+
+<div class="member">
+<i class="fas fa-user-circle"></i>
+<h3>Cecelia S. Jallah</h3>
+<p>General Manager</p>
+</div>
+
+<div class="member">
+<i class="fas fa-user-circle"></i>
+<h3>Hudson SIAH Kattieh</h3>
+<p>IT Specialist</p>
+</div>
+
+<div class="member">
+<i class="fas fa-user-circle"></i>
+<h3>Mohammed A. Sannoh</h3>
+<p>General Supervisor</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="section-title">
+<h2 style="color:white;">Contact Us</h2>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<i class="fas fa-map-marker-alt"></i>
+<h3>Headquarters</h3>
+<p>Pipeline Wein Town Community, Liberia</p>
+</div>
+
+<div class="contact-box">
+<i class="fas fa-phone"></i>
+<h3>Phone Numbers</h3>
+<p>
+0886-881179<br>
+0776-595042<br>
+0772-720297<br>
+0775-976363
+</p>
+</div>
+
+<div class="contact-box">
+<i class="fas fa-envelope"></i>
+<h3>Email</h3>
+<p>info@brighthomeelectrical.com</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Bright Home Electrical Company.
+All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=+counter.getAttribute('data-target');
+
+const count=+counter.innerText;
+
+const increment=target/100;
+
+if(count<target){
+
+counter.innerText=Math.ceil(count+increment);
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+</body>
+</html>
